@@ -6,22 +6,20 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Page not found - StopLight</title>
-  <meta name="description" content="StopLight, providing engineering teams with the best way to document, test, and build web APIs.
-">
+  <title>API Designer - StopLight</title>
+  <meta name="description" content="The perfect OAS (Swagger) companion. Supercharge any OAS file with mocking, transformations, validations, and more.">
   <meta name="p:domain_verify" content="6557723f1c1fca7caf9217123d1ff583"/>
 
   <meta property="og:url" content="https://stoplight.io" />
   <meta property="og:site_name" content="StopLight" />
   <meta property="og:type" content="article" />
-  <meta property="og:title" content="Page not found" />
-  <meta property="og:description" content="StopLight, providing engineering teams with the best way to document, test, and build web APIs.
-" />
-  <meta property="og:image" content="https://stoplight.io/assets/img/homescreen.png" />
+  <meta property="og:title" content="API Designer" />
+  <meta property="og:description" content="The perfect OAS (Swagger) companion. Supercharge any OAS file with mocking, transformations, validations, and more." />
+  <meta property="og:image" content="https://stoplight.io/assets/img/prism.png" />
   <meta property="fb:app_id" content="580327892114787" />
 
   <link rel="stylesheet" href="/assets/css/styles.css?v=1477472008"/>
-  <link rel="canonical" href="https://stoplight.io/404.html">
+  <link rel="canonical" href="https://stoplight.io/platform/design/">
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,600,600italic,400italic' rel='stylesheet' type='text/css'>
 
@@ -138,13 +136,134 @@
 </header>
 
 
-    <div class="page home-page">
-  <div class="page-hero">
+    <div id="design" class="page">
+  <div class="page-hero background-design">
     <div class="container">
-      <h2>Sorry, the page you're looking for is not here.</h2>
-      <p>Go back to our <a href="/">homepage</a> and try again</p>
+      <div class='page-hero-title'>
+        <h1>Stoplight API Designer</h1>
+        <h2>Model complex APIs faster than ever.</h2>
+      </div>
+
+      <div class='page-image' style='background-image: url("https://cdn.stoplight.io/stoplightio/design/design-hero.png")'></div>
     </div>
   </div>
+
+  <div class='callout-bar'>
+    <ul>
+      <li>OAS + RAML Support</li>
+      <li class='divider'></li>
+      <li>Teams & Permissions</li>
+      <li class='divider'></li>
+      <li>Complex Modeling</li>
+      <li class='divider'></li>
+      <li>API Discovery</li>
+      <li class='divider'></li>
+      <li>Instant Mock Servers</li>
+    </ul>
+  </div>
+
+  <section class='page-section' id='download'>
+    <div class='container'>
+      <h3>Get Started Today</h3>
+      <div class='section-tagline'>
+        
+          Stoplight is <span class='td-u'>free</span> for individuals.
+        
+      </div>
+      <div class='app-blocks'>
+        <a class='app-block' href='https://app.stoplight.io/register'>
+          <div class='app-block-inner'>
+            <div class='app-block-icon'><i class='fa fa-cloud'></i></div>
+            <div class='app-block-name'>Web</div>
+          </div>
+        </a>
+        <a class='app-block' href='http://download.stoplight.io/download/osx'>
+          <div class='app-block-inner'>
+            <div class='app-block-icon'><i class='fa fa-apple'></i></div>
+            <div class='app-block-name'>macOS</div>
+          </div>
+        </a>
+        <a class='app-block' href='http://download.stoplight.io/download/windows'>
+          <div class='app-block-inner'>
+            <div class='app-block-icon'><i class='fa fa-windows'></i></div>
+            <div class='app-block-name'>Windows</div>
+          </div>
+        </a>
+        <a class='app-block' href='http://download.stoplight.io/download/linux'>
+          <div class='app-block-inner'>
+            <div class='app-block-icon'><i class='fa fa-linux'></i></div>
+            <div class='app-block-name'>Linux</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <div class='timeline design'>
+    <div class='timeline-content f jc-c hidden-xs'>
+      <div class='f-1 timeline-left'>
+        <timeline-left class='timeline-left-block ta-r' v-for='info in left' :info='info'></timeline-left>
+      </div>
+      <div class='f-1 timeline-right'>
+        <timeline-right class='timeline-right-block ta-l' v-for='info in right' :info='info'></timeline-right>
+      </div>
+    </div>
+
+    <div class='timeline-content visible-xs'>
+      <div class='timeline-block' v-for='info in mobile'>
+        <div class='timeline-title'>${info.title}</div>
+        <div class='f fw-w'>
+          <div class='timeline-feature f-1' v-for='feature in info.features'>
+            <div class='timeline-feature-info'>
+              <div class='timeline-feature-title'>${feature.title}</div>
+              <div class='timeline-feature-message'>${feature.message}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <a class='timeline-bottom-button' href='https://help.stoplight.io/docs'>Read The Docs</a>
+  </div>
+
+  <section class='page-section' id='download'>
+    <div class='container'>
+      <h3>Get Started Today</h3>
+      <div class='section-tagline'>
+        
+          Stoplight is <span class='td-u'>free</span> for individuals.
+        
+      </div>
+      <div class='app-blocks'>
+        <a class='app-block' href='https://app.stoplight.io/register'>
+          <div class='app-block-inner'>
+            <div class='app-block-icon'><i class='fa fa-cloud'></i></div>
+            <div class='app-block-name'>Web</div>
+          </div>
+        </a>
+        <a class='app-block' href='http://download.stoplight.io/download/osx'>
+          <div class='app-block-inner'>
+            <div class='app-block-icon'><i class='fa fa-apple'></i></div>
+            <div class='app-block-name'>macOS</div>
+          </div>
+        </a>
+        <a class='app-block' href='http://download.stoplight.io/download/windows'>
+          <div class='app-block-inner'>
+            <div class='app-block-icon'><i class='fa fa-windows'></i></div>
+            <div class='app-block-name'>Windows</div>
+          </div>
+        </a>
+        <a class='app-block' href='http://download.stoplight.io/download/linux'>
+          <div class='app-block-inner'>
+            <div class='app-block-icon'><i class='fa fa-linux'></i></div>
+            <div class='app-block-name'>Linux</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
 </div>
 
 

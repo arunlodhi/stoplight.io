@@ -6,22 +6,20 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Page not found - StopLight</title>
-  <meta name="description" content="StopLight, providing engineering teams with the best way to document, test, and build web APIs.
-">
+  <title>Scenarios - StopLight</title>
+  <meta name="description" content="The perfect OAS (Swagger) companion. Supercharge any OAS file with mocking, transformations, validations, and more.">
   <meta name="p:domain_verify" content="6557723f1c1fca7caf9217123d1ff583"/>
 
   <meta property="og:url" content="https://stoplight.io" />
   <meta property="og:site_name" content="StopLight" />
   <meta property="og:type" content="article" />
-  <meta property="og:title" content="Page not found" />
-  <meta property="og:description" content="StopLight, providing engineering teams with the best way to document, test, and build web APIs.
-" />
-  <meta property="og:image" content="https://stoplight.io/assets/img/homescreen.png" />
+  <meta property="og:title" content="Scenarios" />
+  <meta property="og:description" content="The perfect OAS (Swagger) companion. Supercharge any OAS file with mocking, transformations, validations, and more." />
+  <meta property="og:image" content="https://stoplight.io/assets/img/prism.png" />
   <meta property="fb:app_id" content="580327892114787" />
 
   <link rel="stylesheet" href="/assets/css/styles.css?v=1477472008"/>
-  <link rel="canonical" href="https://stoplight.io/404.html">
+  <link rel="canonical" href="https://stoplight.io/platform/scenarios/">
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,600,600italic,400italic' rel='stylesheet' type='text/css'>
 
@@ -138,13 +136,84 @@
 </header>
 
 
-    <div class="page home-page">
-  <div class="page-hero">
-    <div class="container">
-      <h2>Sorry, the page you're looking for is not here.</h2>
-      <p>Go back to our <a href="/">homepage</a> and try again</p>
+    <div id='scenarios' class='page'>
+  <div class='page-hero background-scenarios'>
+    <div class='container'>
+      <div class='page-hero-title'>
+        <h1>Stoplight Scenarios</h1>
+        <h2>Test, automate, and debug web APIs + AWS Lambda.</h2>
+      </div>
+
+      <div class='page-image' style='background-image: url("https://cdn.stoplight.io/stoplightio/scenarios-hero.png")'></div>
     </div>
   </div>
+
+  <div class='callout-bar'>
+    <ul>
+      <li>HTTP Debug</li>
+      <li class='divider'></li>
+      <li>Invoke Lambda</li>
+      <li class='divider'></li>
+      <li>Contract Testing</li>
+      <li class='divider'></li>
+      <li>Environments</li>
+      <li class='divider'></li>
+      <li>Multi-Step</li>
+      <li class='divider'></li>
+      <li>Run From Terminal</li>
+    </ul>
+  </div>
+
+  <section class='page-section register-beta'>
+  <div class='container ta-c'>
+    <h3>Register For The Beta</h3>
+    <div class='register-beta-form'>
+      <input class='register-beta-input' type='email' placeholder='email@whatever.com' v-model='betaEmail' />
+      <button class='btn register-beta-button' v-on:click='addToBeta(betaEmail, $event)'>Let Me In!</button>
+    </div>
+    <div class='register-beta-error'></div>
+    <div class='sub-text'>We hate spam just as much as you, and will respect your email.</div>
+  </div>
+</section>
+
+
+  <div class='timeline scenarios'>
+    <div class='timeline-content f jc-c hidden-xs'>
+      <div class='f-1 timeline-left'>
+        <timeline-left class='timeline-left-block ta-r' v-for='info in left' :info='info'></timeline-left>
+      </div>
+      <div class='f-1 timeline-right'>
+        <timeline-right class='timeline-right-block ta-l' v-for='info in right' :info='info'></timeline-right>
+      </div>
+    </div>
+
+    <div class='timeline-content visible-xs'>
+      <div class='timeline-block' v-for='info in mobile'>
+        <div class='timeline-title'>${info.title}</div>
+        <div class='f fw-w'>
+          <div class='timeline-feature f-1' v-for='feature in info.features'>
+            <div class='timeline-feature-info'>
+              <div class='timeline-feature-title'>${feature.title}</div>
+              <div class='timeline-feature-message'>${feature.message}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class='page-section register-beta'>
+  <div class='container ta-c'>
+    <h3>Register For The Beta</h3>
+    <div class='register-beta-form'>
+      <input class='register-beta-input' type='email' placeholder='email@whatever.com' v-model='betaEmail' />
+      <button class='btn register-beta-button' v-on:click='addToBeta(betaEmail, $event)'>Let Me In!</button>
+    </div>
+    <div class='register-beta-error'></div>
+    <div class='sub-text'>We hate spam just as much as you, and will respect your email.</div>
+  </div>
+</section>
+
 </div>
 
 

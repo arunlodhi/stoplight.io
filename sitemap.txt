@@ -1,6 +1,12 @@
 
+https://stoplight.io/platform/design/
+
+https://stoplight.io/platform/docs/
+
 https://stoplight.io/
 
-https://stoplight.io/prism/
+https://stoplight.io/platform/prism/
+
+https://stoplight.io/platform/scenarios/
 
 https://stoplight.io/terms/
