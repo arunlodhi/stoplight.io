@@ -12398,10 +12398,6 @@ new Vue({
     particlesJS('le-dots', particleConfig);
   }
 
-  $('html, body').animate({
-    scrollTop: 0,
-  }, 500);
-
   var $navbar = $('.navbar'),
       navbarHeight = $navbar.outerHeight();
 
