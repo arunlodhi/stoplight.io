@@ -7,6 +7,10 @@ new Vue({
 
   data: {
     betaEmail: '',
+    submitting: false,
+    submitted: false,
+    error: null,
+    referralData: null,
     left: [
       {
         title: 'Debug with simple one step Scenarios.',
@@ -110,54 +114,46 @@ new Vue({
   },
 
   methods: {
-    addToBeta: function(email, event) {
+    addToBeta: function(event) {
       event.preventDefault(event);
+      var vm = this;
+      var email = vm.betaEmail;
 
-      var buttons = document.getElementsByClassName('register-beta-button') || [];
-      var inputs = document.getElementsByClassName('register-beta-input') || [];
-      var messages = document.getElementsByClassName('register-beta-error') || [];
+      if (!email.match(/^\S+@\S+$/)) {
+        alert('Please enter a valid email.');
+        return;
+      }
 
-      for (var el of buttons) {
-        el.setAttribute('disabled', 'disabled');
-      };
+      vm.submitting = true;
+      vm.error = null;
 
-      for (var el of inputs) {
-        el.setAttribute('disabled', 'disabled');
-      };
+      const search = (window.location.search || '?').slice(1);
+      const parts = search.split('&');
+      let referralToken;
+      for (const k of parts) {
+        const part = k.split('=');
+        if (part[0] === 'ref') {
+          referralToken = part[1];
+        }
+      }
+
+      Untorch.submitSignup({
+        email,
+        referralToken,
+      }, function (error, data) {
+        vm.submitting = false;
+        if (error) {
+          vm.error = error;
+        } else {
+          vm.submitted = true;
+          vm.referralData = data;
+        }
+      });
 
       var xhr = XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
       xhr.open('POST', `https://api.stoplight.io/beta-request`, true);
       xhr.setRequestHeader('Content-type', 'application/json');
-
-      xhr.onload = function() {
-        if (xhr.status !== 200) {
-          var error = {};
-          try {
-            error = JSON.parse(xhr.responseText);
-
-            for (var el of messages) {
-              el.textContent = error.message;
-            }
-
-            for (var el of buttons) {
-              el.removeAttribute('disabled');
-            };
-
-            for (var el of inputs) {
-              el.removeAttribute('disabled');
-            };
-          } catch (e) {}
-        } else {
-          for (var el of messages) {
-            el.textContent = '';
-          }
-          for (var el of buttons) {
-            el.textContent = 'Success!';
-          };
-        }
-      };
-
-      xhr.send(JSON.stringify({email, feature: 'scenarios'}));
+      xhr.send(JSON.stringify({email, referralToken, feature: 'scenarios'}));
     }
   },
 });
